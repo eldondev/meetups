@@ -1,0 +1,83 @@
+Typhoon in 10 Minutes: A Brief Trip Report
+
+Eldon Stegall
+typhoon-slide@eldondev.com
+
+Pleasure, not business
+
+
+
+* Who is this salty joker?
+
+.image profile_pic.jpeg
+
+- Approximately 15 years in industry, 10 years working in the cloud
+- 12 years security-adjacent
+- Small company guy (5 people to 500 people)
+
+* Problem statement:
+
+Security
+
+.image scoreboard.png
+
+
+* Further Problem statement:
+
+Security and Ebay
+But, really, mostly Ebay
+
+.image wyse.png
+
+Objectives:
+1) Use Less Power
+2) Distribute More Systems
+3) ????
+4) Profit!
+
+* I don't see any Kubernetes yet
+
+Well, get ready:
+
+.image tenor.gif
+
+Plan of attack:
+1) Use WOL and PXE booting to deploy 
+2) Use a declarative infrastructure to manage
+3) Monitor, monitor,  monitor!
+
+* Enter Typhoon
+
+.link https://typhoon.psdn.io
+
+An open distro for kubernetes
+Installable on bare metal
+Via PXE
+Based on flatcar linux
+
+* Context
+
+Previous experience:
+* Container Linux
+* busybox udhcpd
+* dnsmasq
+
+New Components:
+
+Matchbox (manages pxe process)
+
+CT (container linux config)
+
+* The Flow
+
+1) New machines pxe boot to flatcar linux in memory
+2) Machines install flatcar linux to disk, and add a customization file, and reboots.
+3) Terraform ssh-provisions machines with certificates and start kubelet!
+
+Done!
+
+* But do you need Metal?
+
+No! Let's try it in VM's!
+
+
